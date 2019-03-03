@@ -4,7 +4,13 @@ This repository has Python scripts that show how to do text-to-speech on Azure.
 
 ## How to Run It
 
-It's pretty simple! Run this:
+It's pretty simple! Run this on your computer:
+
+```console
+curl -o tts-azure.py https://raw.githubusercontent.com/arschles/tts-azure-samples/master/tts-azure.py
+```
+
+And then run this on your terminal, from the same directory:
 
 ```console
 python tts-azure.py
