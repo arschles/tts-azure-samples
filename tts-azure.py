@@ -3,6 +3,11 @@ import requests
 import time
 from xml.etree import ElementTree
 
+#####
+# Here's where to update the text you want to speak!
+#
+# Just copy whatever you want to translate in between the two """ parts
+#####
 text = """
 Despite long-standing availability of an effective vaccine, tetanus remains a significant problem in many countries. Outcome depends on access to mechanical ventilation and intensive care facilities and in settings where these are limited, mortality remains high. Administration of tetanus antitoxin by the intramuscular route is recommended treatment for tetanus, but as the tetanus toxin acts within the central nervous system, it has been suggested that intrathecal administration of antitoxin may be beneficial. Previous studies have indicated benefit, but with the exception of one small trial no blinded studies have been performed.
 The objective of this study is to establish whether the addition of intrathecal tetanus antitoxin reduces the need for mechanical ventilation in patients with tetanus. Secondary objectives: to determine whether the addition of intrathecal tetanus antitoxin reduces autonomic nervous system dysfunction and length of hospital/ intensive care unit stay; whether the addition of intrathecal tetanus antitoxin in the treatment of tetanus is safe and cost-effective; to provide data to inform recommendation of human rather than equine antitoxin.
@@ -49,6 +54,10 @@ class TextToSpeech(object):
         voice.set(
             'name', 'Microsoft Server Speech Text to Speech Voice (en-US, ZiraRUS)'
         )
+        #####
+        # Here's where you can update the speed. Replace the percentage
+        # with whatever you want. Negative is slower
+        #####
         prosody = ElementTree.SubElement(
             voice, "prosody", attrib={"rate": "-15.00%"})
         prosody.text = self.tts
@@ -67,7 +76,7 @@ class TextToSpeech(object):
 
 if __name__ == "__main__":
     print("What's the subscription key?")
-    subscription_key = raw_input()
+    subscription_key = input()
     app = TextToSpeech(subscription_key)
     app.get_token()
     app.save_audio()
