@@ -24,7 +24,7 @@ class TextToSpeech(object):
         }
         response = requests.post(fetch_token_url, headers=headers)
         self.access_token = str(response.text)
-        print "got access token"
+        print("got access token")
 
     def save_audio(self):
         base_url = 'https://eastus.tts.speech.microsoft.com/'
@@ -66,7 +66,7 @@ class TextToSpeech(object):
 
 
 if __name__ == "__main__":
-    print "What's the subscription key?"
+    print("What's the subscription key?")
     subscription_key = raw_input()
     app = TextToSpeech(subscription_key)
     app.get_token()
