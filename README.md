@@ -1,4 +1,4 @@
-# Welcome :)
+# Welcome :smile:
 
 This repository has Python scripts that show how to do text-to-speech on Azure.
 
